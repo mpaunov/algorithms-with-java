@@ -34,7 +34,7 @@ public class CableNetwork {
         int nodes = Integer.parseInt(scanner.nextLine().split("\\s+")[1]);
         int edgeCount = Integer.parseInt(scanner.nextLine().split("\\s+")[1]);
 
-        boolean[] used = new boolean[nodes];
+        boolean[] connected = new boolean[nodes];
 
         for (int i = 0; i < edgeCount; i++) {
             String[] tokens = scanner.nextLine().split("\\s+");
@@ -49,13 +49,13 @@ public class CableNetwork {
             graph.get(from).add(edge);
 
             if (tokens.length == 4) {
-                used[from] = used[to] = true;
+                connected[from] = connected[to] = true;
             }
         }
 
-        prim(used, budget);
+        prim(connected, budget);
 
-        System.out.println("Budget used: " + cost);
+        System.out.println("Budget connected: " + cost);
     }
 
     private static boolean prim(boolean[] used, int budget) {

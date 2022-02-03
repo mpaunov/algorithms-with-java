@@ -1,4 +1,4 @@
-package exam_preparation;
+package fundamentals_exam_preparation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
